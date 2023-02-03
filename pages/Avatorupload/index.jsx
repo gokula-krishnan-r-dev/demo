@@ -38,7 +38,7 @@ export default function Avator() {
             />
           </div>
           <div className="absolute xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-0 w-[50%] px-12 top-0">
-            <div className="pt-[160px] md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
+            <div className="pt-[160px] upload--avator md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
               <div className="flex md:hidden items-center gap-4">
                 <img src="Images/MaskGroup57 1.svg" />
                 <h4 className="Title--text">ontheMoons</h4>

@@ -83,7 +83,7 @@ export default function Otp() {
                   </svg>
                 </span>
               </h4>
-              <div className="flex items-center justify-between md:w-[100%] pt-8 w-[77%]">
+              <div className="flex items-center justify-between md:w-[100%] pt-8 w-[77%] md:gap-3">
                 <input
                   className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
                   type="text"

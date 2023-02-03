@@ -11,8 +11,6 @@ export default function userInformation() {
       </Head>
       <main className="backgroudiamge--profile h-[100vh]">
         <div className="hidden w-full h-[100vh] md:block">
-          {/* <img className="" src="Images/image 1 (2).svg" /> */}
-
           <div className="border-none">
             <img className="h-[69%]  border-none presbackmg--profile  fixed !bottom-0 min-w-[100%] " />
           </div>
@@ -42,7 +40,7 @@ export default function userInformation() {
                 <img src="Images/MaskGroup57 1.svg" />
                 <h4 className="Title--text">ontheMoons</h4>
               </div>
-              <h4 className="Subtitle--text md:flex md:h-[45px] md:items-center md:justify-start md:text-start  md:text-[41px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
+              <h4 className="Subtitle--text md:flex md:h-[45px] md:items-center md:justify-start md:text-start  md:text-[31px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
                 Profile Creation{" "}
               </h4>
               <div className="overflow-y-scroll scroll-bar md:h-[486px] relative md:w-[100%] h-[610px] w-[80%]">
@@ -199,18 +197,18 @@ export default function userInformation() {
                   <h4 className="Profile--subdiv--text pt-6">
                     I find many things beautiful
                   </h4>
-                  <div className=" bg-[#FF0034] pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] bottom-0">
+                  <div className=" bg-[#FF0034] pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:gap-[80px] bottom-0">
                     <div className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white profleback-text gap-2">
                       Yes <img src="Images/image 10.svg" alt="" />
                     </div>
-                    <div className="bg-white mt-8 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] profleback-text h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 gap-2 border-white">
+                    <div className="bg-white mt-8 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] profleback-text  h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 gap-2 border-white">
                       No <img src="Images/image 9.svg" alt="" />
                     </div>
                   </div>
                   <h4 className="Profile--subdiv--text pt-2">
                     I find many things beautiful
                   </h4>
-                  <div className=" bg-[#FF0034] pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] bottom-0">
+                  <div className=" bg-[#FF0034] md:gap-[80px] pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] bottom-0">
                     <div className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white profleback-text gap-2">
                       Yes <img src="Images/image 10.svg" alt="" />
                     </div>
@@ -224,7 +222,7 @@ export default function userInformation() {
                     <img className="md:w-[14%]" src="Images/image 11.svg" />
                   </div>
                 </div>
-                <div className=" bg-[#FF0034]  pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:w-[100%] md:bottom-[-6px] -bottom-1">
+                <div className=" bg-[#FF0034]  pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:gap-[130px] md:w-[100%] md:bottom-[-6px] -bottom-1">
                   <div className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white md:text-[18px] profleback-text">
                     Back
                   </div>

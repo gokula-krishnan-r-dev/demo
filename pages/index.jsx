@@ -38,7 +38,7 @@ export default function Home() {
               src="Images/loginbannerimg.svg"
             />
           </div>
-          <div className="absolute md:z-20 md:bottom-0 xl:w-[70%] md:w-[100%] md:px-1 w-[50%] px-12 top-0">
+          <div className="absolute md:z-20 md:bottom-0 xl:w-[70%] md:w-[100%] md:px-1 w-[50%] px-12  top-0">
             <div className="pt-24 md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
               <div className="flex md:hidden items-center gap-4">
                 <img src="Images/MaskGroup57 1.svg" />
