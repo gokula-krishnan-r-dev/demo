@@ -422,3 +422,8 @@ button {
     top: 400px;
   }
 }
+@media (max-width: 1300px) {
+  .login--text {
+    font-size: 40px;
+  }
+}

@@ -49,13 +49,13 @@ export default function Home() {
             />
           </div>
           <form onSubmit={userphonenumber}>
-            <div className="absolute md:z-20 md:bottom-0 xl:w-[70%] md:w-[100%] md:px-1 w-[50%] px-12  top-0">
+            <div className="absolute md:z-20 md:bottom-0 xl:w-[80%] md:w-[100%] md:px-1 w-[50%] px-12  top-0">
               <div className="pt-24 loginscreen--height  md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
                 <div className="flex md:hidden items-center gap-4">
                   <img src="Images/MaskGroup57 1.svg" />
                   <h4 className="Title--text">ontheMoons</h4>
                 </div>
-                <h4 className="Subtitle--text md:flex md:items-center md:justify-center md:text-center md:text-[23px] loginscreen--text md:h-9 md:w-[100%] md:leading-3 w-[80%] md:pt-2 max-[694px]:pt-0 pt-6">
+                <h4 className="Subtitle--text login--text xl:text-[40px] md:flex md:items-center md:justify-center md:text-center md:text-[23px] loginscreen--text md:h-9 md:w-[100%] md:leading-3 w-[80%] md:pt-2 max-[694px]:pt-0 pt-6">
                   What is your Phone Number?
                 </h4>
                 <div className="bg-white loginscreen--text mt-8 md:mt-4 flex items-center w-[84%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] border-2 border-white">
