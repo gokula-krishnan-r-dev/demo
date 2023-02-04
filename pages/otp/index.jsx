@@ -1,7 +1,9 @@
 import Head from "next/head"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Otp() {
+  const [otp, setotp] = useState()
   return (
     <>
       <Head>
@@ -38,142 +40,148 @@ export default function Otp() {
               src="Images/loginbannerimg.svg"
             />
           </div>
-          <div className="absolute xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-0 w-[50%] px-12 top-0">
-            <div className="pt-24 loginscreen--height md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
-              <div className="flex md:hidden items-center gap-4">
-                <img src="Images/MaskGroup57 1.svg" />
-                <h4 className="Title--text">ontheMoons</h4>
-              </div>
-              <h4 className="Subtitle--text md:flex md:h-[30px] md:items-center md:justify-center md:text-center md:text-[23px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
-                Verification Code
-              </h4>
+          <form onSubmit={otp}>
+            <div className="absolute xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-0 w-[50%] px-12 top-0">
+              <div className="pt-24 loginscreen--height md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
+                <div className="flex md:hidden items-center gap-4">
+                  <img src="Images/MaskGroup57 1.svg" />
+                  <h4 className="Title--text">ontheMoons</h4>
+                </div>
+                <h4 className="Subtitle--text md:flex md:h-[30px] md:items-center md:justify-center md:text-center md:text-[23px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
+                  Verification Code
+                </h4>
 
-              <h4 className="paragraph--text loginscreen--text md:text-[16px] md:pt-5 md:leading-[24px]  pt-6 w-[70%]  flex-col md:w-[100%]">
-                Please enter the verification code sent to
-                <Link href="/">
-                  <button className="flex phonenumber--sutitle-txt  items-center cursor-pointer gap-2">
-                    +91 543534 54664
+                <h4 className="paragraph--text loginscreen--text md:text-[16px] md:pt-5 md:leading-[24px]  pt-6 w-[70%]  flex-col md:w-[100%]">
+                  Please enter the verification code sent to
+                  <Link href="/">
+                    <button className="flex phonenumber--sutitle-txt  items-center cursor-pointer gap-2">
+                      +91 543534 54664
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.3332 12.8332V17.4165C18.3332 17.9228 17.9228 18.3332 17.4165 18.3332H4.58317C4.07691 18.3332 3.6665 17.9228 3.6665 17.4165V4.58317C3.6665 4.07691 4.07691 3.6665 4.58317 3.6665H9.1665"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9.1665 12.8335H11.9165L20.1665 4.5835L17.4165 1.8335L9.1665 10.0835V12.8335Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.6665 4.5835L17.4165 7.3335"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </Link>
+                </h4>
+                <div className="flex loginscreen--text items-center justify-between md:w-[100%] pt-8 w-[77%] md:gap-3">
+                  <input
+                    className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
+                    type="text"
+                    maxLength={1}
+                    onChange={(e) => setotp(e.target.value)}
+                  />
+                  <input
+                    className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
+                    type="text"
+                    maxLength={1}
+                    onChange={(e) => setotp(e.target.value)}
+                  />
+                  <input
+                    className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
+                    type="text"
+                    maxLength={1}
+                    onChange={(e) => setotp(e.target.value)}
+                  />
+                  <input
+                    className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
+                    type="text"
+                    maxLength={1}
+                    onChange={(e) => setotp(e.target.value)}
+                  />
+                </div>
+                <div className="flex items-center justify-between md:w-[100%] w-[77%] pt-8">
+                  <h4 className="otp--title--text md:text-[14px]">
+                    Didn’t receive an OTP?
+                  </h4>
+                  <button className="otp--sutitle-txt md:text-[15px] cursor-pointer">
+                    Resend OTP?
+                  </button>
+                </div>
+                <Link href="/avator" className="md:w-[100%]">
+                  <button className="bg-white justify-center md:h-[60px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-3 border-2 gap-2 border-white">
+                    <h4 className="Button--text">Submit</h4>
+                    <img className="md:w-[14%]" src="Images/image 7.svg" />
+                  </button>
+                </Link>
+                <p className="paragraph--text md:hidden text-center   pt-6 w-[78%]">
+                  By clicking Continue, I state that I have read and understood
+                  the terms and conditions.
+                </p>
+                <div className="md:flex md:items-center md:justify-center md:flex-col">
+                  <div className="flex items-center  pr-[130px] md:pr-0 pt-5 justify-center">
                     <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
+                      width="120"
+                      height="14"
+                      viewBox="0 0 120 14"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M18.3332 12.8332V17.4165C18.3332 17.9228 17.9228 18.3332 17.4165 18.3332H4.58317C4.07691 18.3332 3.6665 17.9228 3.6665 17.4165V4.58317C3.6665 4.07691 4.07691 3.6665 4.58317 3.6665H9.1665"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                      <ellipse
+                        cx="6.80554"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
                       />
-                      <path
-                        d="M9.1665 12.8335H11.9165L20.1665 4.5835L17.4165 1.8335L9.1665 10.0835V12.8335Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                      <ellipse
+                        cx="33.4955"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
                       />
-                      <path
-                        d="M14.6665 4.5835L17.4165 7.3335"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                      <ellipse
+                        cx="60.1859"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="86.8763"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="113.392"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
                       />
                     </svg>
-                  </button>
-                </Link>
-              </h4>
-              <div className="flex loginscreen--text items-center justify-between md:w-[100%] pt-8 w-[77%] md:gap-3">
-                <input
-                  className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
-                  type="text"
-                  maxLength={1}
-                />
-                <input
-                  className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
-                  type="text"
-                  maxLength={1}
-                />
-                <input
-                  className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
-                  type="text"
-                  maxLength={1}
-                />
-                <input
-                  className="max-w-[74px] phonenumber--text  outline-none text-center rounded-[20px] h-[74px]"
-                  type="text"
-                  maxLength={1}
-                />
-              </div>
-              <div className="flex items-center justify-between md:w-[100%] w-[77%] pt-8">
-                <h4 className="otp--title--text md:text-[14px]">
-                  Didn’t receive an OTP?
-                </h4>
-                <button className="otp--sutitle-txt md:text-[15px] cursor-pointer">
-                  Resend OTP?
-                </button>
-              </div>
-              <Link href="/avator" className="md:w-[100%]">
-                <button className="bg-white justify-center md:h-[60px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-3 border-2 gap-2 border-white">
-                  <h4 className="Button--text">Submit</h4>
-                  <img className="md:w-[14%]" src="Images/image 7.svg" />
-                </button>
-              </Link>
-              <p className="paragraph--text md:hidden text-center   pt-6 w-[78%]">
-                By clicking Continue, I state that I have read and understood
-                the terms and conditions.
-              </p>
-              <div className="md:flex md:items-center md:justify-center md:flex-col">
-                <div className="flex items-center  pr-[130px] md:pr-0 pt-5 justify-center">
-                  <svg
-                    width="120"
-                    height="14"
-                    viewBox="0 0 120 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <ellipse
-                      cx="6.80554"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="33.4955"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="60.1859"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="86.8763"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="113.392"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                  </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </main>
     </>

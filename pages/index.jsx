@@ -48,164 +48,168 @@ export default function Home() {
               src="Images/loginbannerimg.svg"
             />
           </div>
-          <div className="absolute md:z-20 md:bottom-0 xl:w-[70%] md:w-[100%] md:px-1 w-[50%] px-12  top-0">
-            <div className="pt-24 loginscreen--height  md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
-              <div className="flex md:hidden items-center gap-4">
-                <img src="Images/MaskGroup57 1.svg" />
-                <h4 className="Title--text">ontheMoons</h4>
-              </div>
-              <h4 className="Subtitle--text md:flex md:items-center md:justify-center md:text-center md:text-[23px] loginscreen--text md:h-9 md:w-[100%] md:leading-3 w-[80%] md:pt-2 max-[694px]:pt-0 pt-6">
-                What is your Phone Number?
-              </h4>
-              <div className="bg-white loginscreen--text mt-8 md:mt-4 flex items-center w-[84%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] border-2 border-white">
-                <div className="phonenumber--text loginscreen--text md:text-[20px] gap-2 pl-0 w-[120px]   border-[#7E7E7E]">
-                  <div className="bg-white  mt-1 md:mt-0 flex items-center w-[96%] rounded-[20px] h-[74px]  md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
-                    <span
-                      onClick={(e) => {
-                        setmeetVisibility(!meetVisibility)
-                        setSearch("")
-                      }}
-                      className="flex phonenumber--text loginscreen--text md:text-[20px] gap-2 pl-4 w-[120px] border-r-[2px]  border-[#7E7E7E]  phonenumber--text  items-center"
-                      title={
-                        meetselectedOption === "" ? "+91" : meetselectedOption
-                      }
-                    >
-                      {meetselectedOption === ""
-                        ? "+91"
-                        : meetselectedOption.length <= 20
-                        ? meetselectedOption
-                        : `${meetselectedOption.slice(0, 20)}...`}
-                      <svg
-                        onClick={() => setmeetVisibility(!meetVisibility)}
-                        className="md:w-[13px]"
-                        width="17"
-                        height="10"
-                        viewBox="0 0 17 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15.623 1.53662L8.62305 8.53662L1.62305 1.53662"
-                          stroke="#363535"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    {meetVisibility && (
-                      <div className="absolute z-20 rounded-[20px] md:!top-[135px] w-[12%] selection-top md:w-[24%] top-[430px] bg-white">
-                        <ul className="  rounded-[20px]  w-[100%]">
-                          <li className="pt-1 ">
-                            {meetoptions
-                              .filter((option) =>
-                                option
-                                  .toLowerCase()
-                                  .includes(search.toLowerCase())
-                              )
-                              .map((option, index) => (
-                                <li
-                                  key={index}
-                                  className={
-                                    meetselectedOption === option
-                                      ? "active-option border-b-[1px] border-gray-300"
-                                      : "border-b-[1px] border-gray-300"
-                                  }
-                                  onClick={() => {
-                                    setmeetSelectedOption(option)
-                                    setmeetVisibility(false)
-                                  }}
-                                >
-                                  <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
-                                    <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
-                                      {option}
-                                    </h4>
-                                  </div>
-                                </li>
-                              ))}
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-                  </div>
+          <form onSubmit={userphonenumber}>
+            <div className="absolute md:z-20 md:bottom-0 xl:w-[70%] md:w-[100%] md:px-1 w-[50%] px-12  top-0">
+              <div className="pt-24 loginscreen--height  md:absolute md:bottom-[20px] md:flex md:flex-col md:items-center md:justify-center">
+                <div className="flex md:hidden items-center gap-4">
+                  <img src="Images/MaskGroup57 1.svg" />
+                  <h4 className="Title--text">ontheMoons</h4>
                 </div>
-                <input
-                  className="w-[100%]  md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 phonenumber--text outline-none rounded-[20px] h-[70px]"
-                  type="number"
-                  onChange={(e) => setUserPhonenumber(e.target.value)}
-                />
-              </div>
-              <p className="paragraph--text loginscreen--text  md:text-[16px] md:pt-5 md:leading-[24px]  pt-6 w-[88%] md:w-[80%]">
-                Your phone numbrt helps us protect your account. You can also
-                use it to log back in if you ever forget your password.
-              </p>
-              <Link href="otp" className="md:w-[84%]">
-                <button className="bg-white loginscreen--text2 justify-center md:h-[60px] mt-8 flex items-center w-[84%] md:w-[100%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-5 border-2 gap-2 border-white">
-                  <h4 className="Button--text">Continue</h4>
-                  <img className="md:w-[14%]" src="Images/image 7.svg" />
-                </button>
-              </Link>
-              <p className="paragraph--text md:hidden text-center pt-6 w-[78%]">
-                By clicking Continue, I state that I have read and understood
-                the terms and conditions.
-              </p>
-              <div className="md:flex md:items-center md:justify-center md:flex-col">
-                <p className="paragraph--text w-[100%] text-center flex items-center justify-center pr-[130px] md:pr-9 pt-6 md:pt-4 md:w-[120%]">
-                  Already have an account{" "}
-                  <button className="text-[700] text-[25px] pl-2">
-                    {" "}
-                    Login
-                  </button>
+                <h4 className="Subtitle--text md:flex md:items-center md:justify-center md:text-center md:text-[23px] loginscreen--text md:h-9 md:w-[100%] md:leading-3 w-[80%] md:pt-2 max-[694px]:pt-0 pt-6">
+                  What is your Phone Number?
+                </h4>
+                <div className="bg-white loginscreen--text mt-8 md:mt-4 flex items-center w-[84%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] border-2 border-white">
+                  <div className="phonenumber--text loginscreen--text md:text-[20px] gap-2 pl-0 w-[120px]   border-[#7E7E7E]">
+                    <div className="bg-white  mt-1 md:mt-0 flex items-center w-[96%] rounded-[20px] h-[74px]  md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                      <span
+                        onClick={(e) => {
+                          setmeetVisibility(!meetVisibility)
+                          setSearch("")
+                        }}
+                        className="flex phonenumber--text loginscreen--text md:text-[20px] gap-2 pl-4 w-[120px] border-r-[2px]  border-[#7E7E7E]  phonenumber--text  items-center"
+                        title={
+                          meetselectedOption === "" ? "+91" : meetselectedOption
+                        }
+                      >
+                        {meetselectedOption === ""
+                          ? "+91"
+                          : meetselectedOption.length <= 20
+                          ? meetselectedOption
+                          : `${meetselectedOption.slice(0, 20)}...`}
+                        <svg
+                          onClick={() => setmeetVisibility(!meetVisibility)}
+                          className="md:w-[13px]"
+                          width="17"
+                          height="10"
+                          viewBox="0 0 17 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15.623 1.53662L8.62305 8.53662L1.62305 1.53662"
+                            stroke="#363535"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+
+                      {meetVisibility && (
+                        <div className="absolute z-20 rounded-[20px] md:!top-[135px] w-[12%] selection-top md:w-[24%] top-[430px] bg-white">
+                          <ul className="  rounded-[20px]  w-[100%]">
+                            <li className="pt-1 ">
+                              {meetoptions
+                                .filter((option) =>
+                                  option
+                                    .toLowerCase()
+                                    .includes(search.toLowerCase())
+                                )
+                                .map((option, index) => (
+                                  <li
+                                    key={index}
+                                    className={
+                                      meetselectedOption === option
+                                        ? "active-option border-b-[1px] border-gray-300"
+                                        : "border-b-[1px] border-gray-300"
+                                    }
+                                    onClick={() => {
+                                      setmeetSelectedOption(option)
+                                      setmeetVisibility(false)
+                                    }}
+                                  >
+                                    <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                      <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                        {option}
+                                      </h4>
+                                    </div>
+                                  </li>
+                                ))}
+                            </li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <input
+                    className="w-[100%]  md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 phonenumber--text outline-none rounded-[20px] h-[70px]"
+                    type="number"
+                    onChange={(e) => setUserPhonenumber(e.target.value)}
+                  />
+                </div>
+                <p className="paragraph--text loginscreen--text  md:text-[16px] md:pt-5 md:leading-[24px]  pt-6 w-[88%] md:w-[80%]">
+                  Your phone numbrt helps us protect your account. You can also
+                  use it to log back in if you ever forget your password.
                 </p>
-                <div className="flex items-center  pr-[130px] md:pr-0 pt-5 justify-center">
-                  <svg
-                    width="120"
-                    height="14"
-                    viewBox="0 0 120 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <ellipse
-                      cx="6.80554"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="33.4955"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="60.1859"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="86.8763"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="113.392"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                  </svg>
+                <Link href="otp" className="md:w-[84%]">
+                  <button className="bg-white loginscreen--text2 justify-center md:h-[60px] mt-8 flex items-center w-[84%] md:w-[100%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-5 border-2 gap-2 border-white">
+                    <h4 className="Button--text">Continue</h4>
+                    <img className="md:w-[14%]" src="Images/image 7.svg" />
+                  </button>
+                </Link>
+
+                <p className="paragraph--text md:hidden text-center pt-6 w-[78%]">
+                  By clicking Continue, I state that I have read and understood
+                  the terms and conditions.
+                </p>
+                <div className="md:flex md:items-center md:justify-center md:flex-col">
+                  <p className="paragraph--text w-[100%] text-center flex items-center justify-center pr-[130px] md:pr-9 pt-6 md:pt-4 md:w-[120%]">
+                    Already have an account{" "}
+                    <button className="text-[700] text-[25px] pl-2">
+                      {" "}
+                      Login
+                    </button>
+                  </p>
+                  <div className="flex items-center  pr-[130px] md:pr-0 pt-5 justify-center">
+                    <svg
+                      width="120"
+                      height="14"
+                      viewBox="0 0 120 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <ellipse
+                        cx="6.80554"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
+                      />
+                      <ellipse
+                        cx="33.4955"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="60.1859"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="86.8763"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="113.392"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </main>
     </>

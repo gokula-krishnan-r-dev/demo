@@ -1,7 +1,23 @@
 import Head from "next/head"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Avator() {
+  const [formData, setFormData] = useState({
+    name: "",
+  })
+
+  const handleInputChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(formData)
+  }
   return (
     <>
       <Head>
@@ -20,107 +36,114 @@ export default function Avator() {
           <img src="Images/MaskGroup57 1 (1).svg" />
           <h4 className="Title--text md:text-[black]">ontheMoons</h4>
         </div>
-        <div className="w-[100%]">
-          <div className="flex items-center justify-center">
-            <img
-              className="hidden absolute top-[13%] md:block"
-              src="Images/pngwing (1).svg"
-            />
-          </div>
-          <div className="relative flex">
-            <img className=" h-[100vh]" src="Images/Frame (2).svg" alt="" />
-            <img
-              className="absolute w-[60%]  xl:hidden right-0 bottom-0"
-              src="Images/pngwing.svg"
-              alt=""
-            />
-          </div>
-          <div className="absolute  xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-1 w-[50%] px-12 top-0">
-            <div className="pt-[160px] loginscreen--height md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
-              <div className="flex md:hidden items-center gap-4">
-                <img src="Images/MaskGroup57 1.svg" />
-                <h4 className="Title--text">ontheMoons</h4>
-              </div>
-              <h4 className="Subtitle--text md:flex md:h-[120px] md:items-center md:justify-start md:text-start md:text-[23px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
-                Create Avatar{" "}
-                <img
-                  src="Images/vecteezy_happy-young-couple-are-hugging-smiling-posing-for-a_11124970_766 1.svg"
-                  alt=""
-                />
-              </h4>
-
-              <div className="bg-white mt-8 md:mt-4 flex items-center w-[77%] rounded-[20px] h-[74px] md:h-[68px] md:rounded-[20px] md:w-[100%] border-2 border-white">
-                <input
-                  className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                  type="text"
-                  defaultValue={"Jhone Doe"}
-                />
-              </div>
-              <div className="flex items-center justify-between md:w-[100%] md:pt-4 pt-8 w-[77%]">
-                <div className="flex items-center md:gap-3 gap-9">
-                  <img src="Images/Rectangle 18.svg" alt="" />
-                  <img src="Images/Rectangle 19 (1).svg" alt="" />
-                  <img src="Images/Rectangle 20 (1).svg" alt="" />
-                  <img src="Images/Rectangle 21 (1).svg" alt="" />
+        <form onSubmit={handleSubmit}>
+          <div className="w-[100%]">
+            <div className="flex items-center justify-center">
+              <img
+                className="hidden absolute top-[13%] md:block"
+                src="Images/pngwing (1).svg"
+              />
+            </div>
+            <div className="relative flex">
+              <img className=" h-[100vh]" src="Images/Frame (2).svg" alt="" />
+              <img
+                className="absolute w-[60%]  xl:hidden right-0 bottom-0"
+                src="Images/pngwing.svg"
+                alt=""
+              />
+            </div>
+            <div className="absolute  xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-1 w-[50%] px-12 top-0">
+              <div className="pt-[160px] loginscreen--height md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
+                <div className="flex md:hidden items-center gap-4">
+                  <img src="Images/MaskGroup57 1.svg" />
+                  <h4 className="Title--text">ontheMoons</h4>
                 </div>
-              </div>
-              <Link href="/Avatorupload">
-                <button className="bg-white justify-center md:h-[68px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[20px] md:mt-6 border-2 gap-5 border-white">
-                  <h4 className="Button--text">Create my avtar</h4>
-                  <img className="md:w-[14%]" src="Images/image 8.svg" />
-                </button>
-              </Link>
+                <h4 className="Subtitle--text md:flex md:h-[120px] md:items-center md:justify-start md:text-start md:text-[23px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
+                  Create Avatar{" "}
+                  <img
+                    src="Images/vecteezy_happy-young-couple-are-hugging-smiling-posing-for-a_11124970_766 1.svg"
+                    alt=""
+                  />
+                </h4>
 
-              <div className="md:flex md:items-center md:justify-center md:flex-col">
-                <div className="flex items-center  pr-[130px] md:pr-0 pt-8 justify-center">
-                  <svg
-                    width="120"
-                    height="14"
-                    viewBox="0 0 120 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <ellipse
-                      cx="6.80554"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="33.4955"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="60.1859"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="white"
-                    />
-                    <ellipse
-                      cx="86.8763"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                    <ellipse
-                      cx="113.392"
-                      cy="6.72412"
-                      rx="6.54236"
-                      ry="6.5"
-                      fill="#AAAAAA"
-                    />
-                  </svg>
+                <div className="bg-white mt-8 md:mt-4 flex items-center w-[77%] rounded-[20px] h-[74px] md:h-[68px] md:rounded-[20px] md:w-[100%] border-2 border-white">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
+                    defaultValue={"Jhone Doe"}
+                  />
+                </div>
+                <div className="flex items-center justify-between md:w-[100%] md:pt-4 pt-8 w-[77%]">
+                  <div className="flex items-center md:gap-3 gap-9">
+                    <img src="Images/Rectangle 18.svg" alt="" />
+                    <img src="Images/Rectangle 19 (1).svg" alt="" />
+                    <img src="Images/Rectangle 20 (1).svg" alt="" />
+                    <img src="Images/Rectangle 21 (1).svg" alt="" />
+                  </div>
+                </div>
+                <Link href="/Avatorupload">
+                  <button className="bg-white justify-center md:h-[68px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[20px] md:mt-6 border-2 gap-5 border-white">
+                    <h4 className="Button--text">Create my avtar</h4>
+                    <img className="md:w-[14%]" src="Images/image 8.svg" />
+                  </button>
+                </Link>
+
+                <div className="md:flex md:items-center md:justify-center md:flex-col">
+                  <div className="flex items-center  pr-[130px] md:pr-0 pt-8 justify-center">
+                    <svg
+                      width="120"
+                      height="14"
+                      viewBox="0 0 120 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <ellipse
+                        cx="6.80554"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
+                      />
+                      <ellipse
+                        cx="33.4955"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
+                      />
+                      <ellipse
+                        cx="60.1859"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="white"
+                      />
+                      <ellipse
+                        cx="86.8763"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                      <ellipse
+                        cx="113.392"
+                        cy="6.72412"
+                        rx="6.54236"
+                        ry="6.5"
+                        fill="#AAAAAA"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </main>
     </>
   )
