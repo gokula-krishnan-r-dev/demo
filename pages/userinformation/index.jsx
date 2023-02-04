@@ -1,6 +1,36 @@
+import { Calendar, DatePicker } from "@mantine/dates"
 import Head from "next/head"
+import { useState } from "react"
 
 export default function userInformation() {
+  const [value, setValue] = useState(null)
+  const [selectedOption, setSelectedOption] = useState("")
+  const [CountryselectedOption, setCountrySelectedOption] = useState("")
+  const [LanguageselectedOption, setLanguageSelectedOption] = useState("")
+  const [meetselectedOption, setmeetSelectedOption] = useState("")
+  const [categoriesselectedOption, setcategoriesSelectedOption] = useState("")
+  console.log(
+    "🚀 ~ file: index.jsx:9 ~ userInformation ~ CountryselectedOption",
+    CountryselectedOption
+  )
+  const [search, setSearch] = useState("")
+  const [visibility, setVisibility] = useState(false)
+  const [CountryVisibility, setCountryVisibility] = useState(false)
+  const [LanguageVisibility, setLanguageVisibilityisibility] = useState(false)
+  const [meetVisibility, setmeetVisibility] = useState(false)
+  const [categoriesVisibility, setcategoriesVisibility] = useState(false)
+  console.log("🚀 ~ file: index.jsx:8 ~ userInformation ~ value", value)
+  const [DatePickerOpen, setDatePickerOpen] = useState(false)
+  const options = ["Male", "Female"]
+  const Languageoptions = ["Hindi", "Tamil"]
+  const meetoptions = ["zoom", "Google meet"]
+  const categoriesoptions = ["zoom", "Google meet"]
+  const Countryoptions = [
+    { country: "India", img: "Images/Flag-India 1.svg" },
+    { country: "India", img: "Images/Flag-India 1.svg" },
+
+    { country: "India", img: "Images/Flag-India 1.svg" },
+  ]
   return (
     <>
       <Head>
@@ -53,17 +83,49 @@ export default function userInformation() {
                 </div>
                 <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
                   <input
+                    onClick={() => setDatePickerOpen(!DatePickerOpen)}
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
                     type="text"
+                    value={value}
                     defaultValue={"28/05/2023"}
                   />
                 </div>
-                <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
-                  <input
+                {DatePickerOpen && (
+                  <div className="DatePicker p-1 rounded-[10px] left-0 bg-white absolute top-[200px]">
+                    <Calendar
+                      onChange={(e) => {
+                        setValue(e)
+                        var today = new Date(e)
+                        var dd = String(today.getDate()).padStart(2, "0")
+                        var mm = String(today.getMonth() + 1).padStart(2, "0")
+                        var yyyy = today.getFullYear()
+
+                        // console.log("e - ", objDate.getDate())
+                        //https://biggybro-api.herokuapp.com/flight-search?destinationLocationCode=BLR&departureDate=123-4-12&originLocationCode=SFO&returnDate=2023-05-08&adults=1&nonStop=false&max=10&currencyCode=USD
+                        setValue((today = dd + "/" + mm + "/" + yyyy))
+                        setDatePickerOpen(false)
+                      }}
+                      value={value}
+                    />
+                  </div>
+                )}
+                <div
+                  onClick={(e) => {
+                    setVisibility(!visibility)
+                    setSearch("")
+                  }}
+                  className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white"
+                >
+                  <span
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                    type="text"
-                    defaultValue={"Gender"}
-                  />
+                    title={selectedOption === "" ? "Gender" : selectedOption}
+                  >
+                    {selectedOption === ""
+                      ? "Gender"
+                      : selectedOption.length <= 20
+                      ? selectedOption
+                      : `${selectedOption.slice(0, 20)}...`}
+                  </span>
                   <svg
                     className="pr-3"
                     width="49"
@@ -80,18 +142,64 @@ export default function userInformation() {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  {visibility && (
+                    <div className="absolute z-20 rounded-[20px] md:top-[210px] w-[100%] md:w-[100%] top-[290px]">
+                      <ul className=" rounded-[20px]  w-[100%]">
+                        <li className="pt-1">
+                          {options
+                            .filter((option) =>
+                              option
+                                .toLowerCase()
+                                .includes(search.toLowerCase())
+                            )
+                            .map((option, index) => (
+                              <li
+                                key={index}
+                                className={
+                                  selectedOption === option
+                                    ? "active-option"
+                                    : null
+                                }
+                                onClick={() => setSelectedOption(option)}
+                              >
+                                <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                  <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                    {option}
+                                  </h4>
+                                </div>
+                              </li>
+                            ))}
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
-                  <img
-                    className="pl-2 pt-3"
-                    src="Images/Flag-India 1.svg"
-                    alt=""
-                  />
-                  <input
+                <div
+                  onClick={(e) => {
+                    setCountryVisibility(!CountryVisibility)
+                    setSearch("")
+                  }}
+                  className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white"
+                >
+                  <span
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                    type="text"
-                    defaultValue={"Jhone Doe"}
-                  />
+                    title={
+                      CountryselectedOption === ""
+                        ? "India"
+                        : CountryselectedOption
+                    }
+                  >
+                    <img
+                      className="pt-4"
+                      src="Images/Flag-India 1.svg"
+                      alt=""
+                    />
+                    {CountryselectedOption === ""
+                      ? "India"
+                      : CountryselectedOption.length <= 20
+                      ? CountryselectedOption
+                      : `${CountryselectedOption.slice(0, 20)}...`}
+                  </span>
                   <svg
                     className="pr-3"
                     width="49"
@@ -108,13 +216,56 @@ export default function userInformation() {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  {CountryVisibility && (
+                    <div className="absolute z-20 rounded-[20px] md:top-[300px] w-[100%] md:w-[100%] top-[360px]">
+                      <ul className=" rounded-[20px]  w-[100%]">
+                        <li className="pt-1">
+                          {Countryoptions.map((option, index) => (
+                            <li
+                              key={index}
+                              className={
+                                CountryselectedOption === option
+                                  ? "active-option"
+                                  : null
+                              }
+                              onClick={() =>
+                                setCountrySelectedOption(option.country)
+                              }
+                            >
+                              <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                <img className="pt-3" src={option.img} alt="" />
+                                <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                  {option.country}
+                                </h4>
+                              </div>
+                            </li>
+                          ))}
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
-                  <input
+                <div
+                  onClick={(e) => {
+                    setLanguageVisibilityisibility(!LanguageVisibility)
+                    setSearch("")
+                  }}
+                  className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white"
+                >
+                  <span
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                    type="text"
-                    defaultValue={"Language"}
-                  />
+                    title={
+                      LanguageselectedOption === ""
+                        ? "Language"
+                        : LanguageselectedOption
+                    }
+                  >
+                    {LanguageselectedOption === ""
+                      ? "Language"
+                      : LanguageselectedOption.length <= 20
+                      ? LanguageselectedOption
+                      : `${LanguageselectedOption.slice(0, 20)}...`}
+                  </span>
                   <svg
                     className="pr-3"
                     width="49"
@@ -131,20 +282,61 @@ export default function userInformation() {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  {LanguageVisibility && (
+                    <div className="absolute z-20 rounded-[20px] md:top-[370px] w-[100%] md:w-[100%] top-[460px]">
+                      <ul className=" rounded-[20px]  w-[100%]">
+                        <li className="pt-1">
+                          {Languageoptions.map((option, index) => (
+                            <li
+                              key={index}
+                              className={
+                                LanguageselectedOption === option
+                                  ? "active-option"
+                                  : null
+                              }
+                              onClick={() => setLanguageSelectedOption(option)}
+                            >
+                              <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                  {option}
+                                </h4>
+                              </div>
+                            </li>
+                          ))}
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[135px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
+
+                <div className="bg-white relative mt-4 md:mt-4 flex  w-[96%] rounded-[20px] h-[164px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
                   <textarea
-                    className="w-[100%] pt-4  md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[135px]"
+                    className="w-[100%] pt-3 md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[164px]"
                     type="text"
                     defaultValue={"About me (Bio )"}
                   />
                 </div>
-                <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
-                  <input
+                <div
+                  onClick={(e) => {
+                    setmeetVisibility(!meetVisibility)
+                    setSearch("")
+                  }}
+                  className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white"
+                >
+                  <span
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                    type="text"
-                    defaultValue={"I Want to meet"}
-                  />
+                    title={
+                      meetselectedOption === ""
+                        ? "I Want to meet"
+                        : meetselectedOption
+                    }
+                  >
+                    {meetselectedOption === ""
+                      ? "I Want to meet"
+                      : meetselectedOption.length <= 20
+                      ? meetselectedOption
+                      : `${meetselectedOption.slice(0, 20)}...`}
+                  </span>
                   <svg
                     className="pr-3"
                     width="49"
@@ -161,13 +353,59 @@ export default function userInformation() {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  {meetVisibility && (
+                    <div className="absolute z-20 rounded-[20px] md:top-[520px] w-[100%] md:w-[100%] top-[720px]">
+                      <ul className=" rounded-[20px]  w-[100%]">
+                        <li className="pt-1">
+                          {meetoptions
+                            .filter((option) =>
+                              option
+                                .toLowerCase()
+                                .includes(search.toLowerCase())
+                            )
+                            .map((option, index) => (
+                              <li
+                                key={index}
+                                className={
+                                  meetselectedOption === option
+                                    ? "active-option"
+                                    : null
+                                }
+                                onClick={() => setmeetSelectedOption(option)}
+                              >
+                                <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                  <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                    {option}
+                                  </h4>
+                                </div>
+                              </li>
+                            ))}
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <div className="bg-white mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
-                  <input
-                    className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
-                    type="text"
-                    defaultValue={"Choice of Interest categories"}
-                  />
+                <div
+                  onClick={(e) => {
+                    setcategoriesVisibility(!categoriesVisibility)
+                    setSearch("")
+                  }}
+                  className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white"
+                >
+                  <span
+                    className="w-[100%] md:w-[100%] md:text-[17px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text  outline-none rounded-[20px] h-[70px]"
+                    title={
+                      categoriesselectedOption === ""
+                        ? "Choice of Interest categories"
+                        : categoriesselectedOption
+                    }
+                  >
+                    {categoriesselectedOption === ""
+                      ? "Choice of Interest categories"
+                      : categoriesselectedOption.length <= 20
+                      ? categoriesselectedOption
+                      : `${categoriesselectedOption.slice(0, 20)}...`}
+                  </span>
                   <svg
                     className="pr-3"
                     width="49"
@@ -184,6 +422,39 @@ export default function userInformation() {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  {categoriesVisibility && (
+                    <div className="absolute z-20 rounded-[20px] md:top-[600px] w-[100%] md:w-[100%] top-[810px]">
+                      <ul className=" rounded-[20px]  w-[100%]">
+                        <li className="pt-1">
+                          {categoriesoptions
+                            .filter((option) =>
+                              option
+                                .toLowerCase()
+                                .includes(search.toLowerCase())
+                            )
+                            .map((option, index) => (
+                              <li
+                                key={index}
+                                className={
+                                  categoriesselectedOption === option
+                                    ? "active-option"
+                                    : null
+                                }
+                                onClick={() =>
+                                  setcategoriesSelectedOption(option)
+                                }
+                              >
+                                <div className="bg-white  mt-4 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px]  md:rounded-[10px] md:w-[100%] border-2 border-white">
+                                  <h4 className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]">
+                                    {option}
+                                  </h4>
+                                </div>
+                              </li>
+                            ))}
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 <div className="pt-4 bg-transparent">
                   <h3 className="Profile--subtitle--text">
