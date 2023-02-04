@@ -65,42 +65,54 @@ export default function Home() {
             <img src="Images/Group 125.svg" alt="" />
           </div>
           <div className="md:absolute md:left-0 md:right-0 md:w-[100%] md:h-[300px] md:bottom-0">
-            <div className="absolute  md:top-0 md:left-[60px] top-5 left-5">
-              <div className="">
-                <img
-                  className="md:w-[80%] md:pt-[80px] md:px-0 "
-                  src="Images/Frame (4).svg"
-                  alt=""
-                />
-                <h5 className="absolute w-[100%] md:pl-[35px] pl-9 homepage-text md:top-11 md:z-40 centered top-[0] md:text-[23px] right-0">
+            <Link href="/avator">
+              <div
+                onClick={() => console.log("you clicked Avator")}
+                className="absolute  md:top-0 md:left-[60px] top-5 left-5"
+              >
+                <div className="">
                   <img
-                    className="md:w-[10%]"
-                    src="Images/image 20.svg"
+                    className="md:w-[80%] md:pt-[80px] md:px-0 "
+                    src="Images/Frame (4).svg"
                     alt=""
                   />
-                  Change Avator
-                </h5>
+                  <h5 className="absolute w-[100%] md:pl-[35px] pl-9 homepage-text md:top-11 md:z-40 centered top-[0] md:text-[23px] right-0">
+                    <img
+                      className="md:w-[10%]"
+                      src="Images/image 20.svg"
+                      alt=""
+                    />
+                    Change Avator
+                  </h5>
+                </div>
               </div>
-            </div>
-            <div className="absolute md:top-0 md:right-0 md:left-[60px] top-5 right-5">
-              <div className="h-[900px] bg-transparent">
-                <img
-                  className="md:w-[80%] md:pt-[10px]  md:px-0"
-                  src="Images/Frame (4).svg"
-                  alt=""
-                />
-                <h5 className="absolute w-[100%] md:pl-[45px] pl-12 homepage-text md:!top-[113px] md:z-40 centered !top-11 md:text-[23px] right-0">
+            </Link>
+            <Link href="/userinformation">
+              <div
+                onClick={() => console.log("you clicked Profile")}
+                className="absolute md:top-0 md:right-0 md:left-[60px] top-5 right-5"
+              >
+                <div className="h-[900px] bg-transparent">
                   <img
-                    className="md:w-[13%]"
-                    src="Images/Group 111.svg"
+                    className="md:w-[80%] md:pt-[10px]  md:px-0"
+                    src="Images/Frame (4).svg"
                     alt=""
                   />
-                  My Profile
-                </h5>
+                  <h5 className="absolute w-[100%] md:pl-[45px] pl-12 homepage-text md:!top-[113px] md:z-40 centered !top-11 md:text-[23px] right-0">
+                    <img
+                      className="md:w-[13%]"
+                      src="Images/Group 111.svg"
+                      alt=""
+                    />
+                    My Profile
+                  </h5>
+                </div>
               </div>
-            </div>
-
-            <div className="absolute md:left-[60px] bottom-5 left-5">
+            </Link>
+            <div
+              onClick={() => console.log("you clicked Area")}
+              className="absolute cursor-pointer md:left-[60px] bottom-5 left-5"
+            >
               <img
                 className="md:w-[80%] md:pb-[68px]  md:px-0"
                 src="Images/Frame (4).svg"
@@ -110,7 +122,10 @@ export default function Home() {
                 Enter Public Area
               </h5>
             </div>
-            <div className="absolute md:left-[60px] md:right-0 bottom-5 right-5">
+            <div
+              onClick={() => console.log("you clicked Metaverse")}
+              className="absolute cursor-pointer md:left-[60px] md:right-0 bottom-5 right-5"
+            >
               <img
                 className="md:w-[80%] md:pt-24 md:px-0"
                 src="Images/Frame (4).svg"

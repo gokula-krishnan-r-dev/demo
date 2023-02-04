@@ -12,8 +12,6 @@ export default function Avator() {
       </Head>
       <main className="backgroudiamge--avator h-[100vh]">
         <div className="hidden w-full h-[100vh] md:block">
-          <img className="" src="Images/image 1 (2).svg" />
-
           <div className="border-none">
             <img className="h-[55%]  border-none presbackmg--avator  fixed !bottom-0 min-w-[100%] " />
           </div>
@@ -37,8 +35,8 @@ export default function Avator() {
               alt=""
             />
           </div>
-          <div className="absolute xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-1 w-[50%] px-12 top-0">
-            <div className="pt-[160px] md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
+          <div className="absolute  xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-1 w-[50%] px-12 top-0">
+            <div className="pt-[160px] loginscreen--height md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
               <div className="flex md:hidden items-center gap-4">
                 <img src="Images/MaskGroup57 1.svg" />
                 <h4 className="Title--text">ontheMoons</h4>
@@ -67,10 +65,10 @@ export default function Avator() {
                 </div>
               </div>
               <Link href="/Avatorupload">
-                <div className="bg-white justify-center md:h-[68px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[20px] md:mt-6 border-2 gap-5 border-white">
+                <button className="bg-white justify-center md:h-[68px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[20px] md:mt-6 border-2 gap-5 border-white">
                   <h4 className="Button--text">Create my avtar</h4>
                   <img className="md:w-[14%]" src="Images/image 8.svg" />
-                </div>
+                </button>
               </Link>
 
               <div className="md:flex md:items-center md:justify-center md:flex-col">

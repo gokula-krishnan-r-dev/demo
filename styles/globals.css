@@ -284,6 +284,9 @@ input::-webkit-inner-spin-button {
     left: 50%;
     transform: translate(-40%, 5%);
   }
+  .selection-top {
+    top: 212px !important;
+  }
 }
 @media (max-height: 800px) {
   .upload--avator {
@@ -320,6 +323,11 @@ input::-webkit-inner-spin-button {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.centered1 {
+  position: absolute;
+  top: 1%;
+  transform: translate(-0%, -0%);
+}
 
 .homepage-text {
   font-family: "Poppins", sans-serif;
@@ -330,4 +338,87 @@ input::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   color: #ffffff;
+}
+button {
+  outline: none;
+  border: none;
+}
+
+@media (max-height: 706px) {
+  .height--responsive {
+    height: 500px;
+  }
+  .Radius--rounded {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .loginscreen--height {
+    padding-top: 20px;
+  }
+  .selection-top {
+    top: 300px;
+  }
+}
+@media (max-height: 685px) {
+  .height--responsive {
+    height: 430px !important;
+  }
+  .Radius--rounded {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .loginscreen--height {
+    padding-top: 20px;
+  }
+  .selection-top {
+    top: 300px;
+  }
+}
+@media (max-height: 628px) {
+  .height--responsive {
+    height: 340px !important;
+  }
+  .Radius--rounded {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .loginscreen--height {
+    padding-top: 20px;
+  }
+  .selection-top {
+    top: 400px;
+  }
+}
+@media (max-height: 777px) {
+  .height--responsive {
+    height: 514px;
+  }
+  .Radius--rounded {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .loginscreen--height {
+    padding-top: 20px;
+  }
+  .selection-top {
+    top: 355px;
+  }
+}
+@media (max-height: 694px) {
+  .loginscreen--text {
+    padding-top: 0px;
+    margin-top: 0;
+  }
+  .selection-top {
+    top: 300px;
+  }
+}
+@media (max-height: 613px) {
+  .loginscreen--text2 {
+    padding-top: 0px;
+    margin-top: 0;
+  }
+  .selection-top {
+    top: 400px;
+  }
 }

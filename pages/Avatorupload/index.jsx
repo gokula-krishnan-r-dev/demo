@@ -88,10 +88,10 @@ export default function Avator() {
               </div>
 
               <Link href="/userinformation">
-                <div className="bg-white justify-center md:h-[60px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-6 border-2 gap-5 border-white">
+                <button className="bg-white justify-center md:h-[60px] mt-8 flex items-center md:w-[100%] w-[77%] cursor-pointer rounded-[20px] h-[74px] md:rounded-[10px] md:mt-6 border-2 gap-5 border-white">
                   <h4 className="Button--text">Next</h4>
                   <img className="md:w-[14%]" src="Images/image 8 (1).svg" />
-                </div>
+                </button>
               </Link>
 
               <div className="md:flex md:items-center md:justify-center md:flex-col">

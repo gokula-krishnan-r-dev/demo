@@ -57,7 +57,11 @@ export default function userInformation() {
             />
           </div>
           <div className="relative flex">
-            <img className=" h-[100vh]" src="Images/Rectangle 24.svg" alt="" />
+            <img
+              className=" width--response h-[100vh]"
+              src="Images/Rectangle 24.svg"
+              alt=""
+            />
             <img
               className="absolute w-[50%] z-20 xl:hidden right-24 bottom-0"
               src="Images/image 14.svg"
@@ -66,14 +70,14 @@ export default function userInformation() {
           </div>
           <div className="absolute xl:w-[80%] md:z-20 md:bottom-0 md:w-[100%] md:px-0 w-[50%] px-12 top-0">
             <div className="pt-[30px] md:w-[100%] md:px-9 md:absolute md:bottom-[20px] md:flex md:flex-col ">
-              <div className="flex md:hidden items-center gap-4">
+              <div className="flex md:hidden   items-center gap-4">
                 <img src="Images/MaskGroup57 1.svg" />
                 <h4 className="Title--text">ontheMoons</h4>
               </div>
               <h4 className="Subtitle--text md:flex md:h-[45px] md:items-center md:justify-start md:text-start  md:text-[31px] md:w-[100%] md:leading-3 w-[80%] md:pt-3 pt-6">
                 Profile Creation{" "}
               </h4>
-              <div className="overflow-y-scroll scroll-bar md:h-[486px] relative md:w-[100%] h-[610px] w-[80%]">
+              <div className="overflow-y-scroll scroll-bar md:h-[486px] relative md:w-[100%] max-h-[600px] height--responsive w-[80%]">
                 <div className="bg-white mt-8 md:mt-4 flex items-center w-[96%] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white">
                   <input
                     className="w-[100%] md:w-[100%] md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 createusername--text outline-none rounded-[20px] h-[70px]"
@@ -469,12 +473,12 @@ export default function userInformation() {
                     I find many things beautiful
                   </h4>
                   <div className=" bg-[#FF0034] pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:gap-[80px] bottom-0">
-                    <div className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white profleback-text gap-2">
+                    <button className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white profleback-text gap-2">
                       Yes <img src="Images/image 10.svg" alt="" />
-                    </div>
-                    <div className="bg-white mt-8 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] profleback-text  h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 gap-2 border-white">
+                    </button>
+                    <button className="bg-white mt-8 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] profleback-text  h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 gap-2 border-white">
                       No <img src="Images/image 9.svg" alt="" />
-                    </div>
+                    </button>
                   </div>
                   <h4 className="Profile--subdiv--text pt-2">
                     I find many things beautiful
@@ -493,7 +497,7 @@ export default function userInformation() {
                     <img className="md:w-[14%]" src="Images/image 11.svg" />
                   </div>
                 </div>
-                <div className=" bg-[#FF0034]  pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:gap-[130px] md:w-[100%] md:bottom-[-6px] -bottom-1">
+                <div className=" Radius--rounded bg-[#FF0034]  pt-0 pb-[33px] flex w-[96%] sticky items-center justify-between gap-[190px] md:gap-[130px] md:w-[100%] md:bottom-[-6px] -bottom-1">
                   <div className="bg-white mt-4 md:mt-4 justify-center flex items-center w-[167px] rounded-[20px] h-[74px] md:h-[60px] md:rounded-[10px] md:w-[100%] border-2 border-white md:text-[18px] profleback-text">
                     Back
                   </div>
