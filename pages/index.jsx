@@ -6,6 +6,11 @@ export default function Home() {
   const [meetVisibility, setmeetVisibility] = useState(false)
   const [meetselectedOption, setmeetSelectedOption] = useState("")
   const [search, setSearch] = useState("")
+  const [userphonenumber, setUserPhonenumber] = useState("")
+  console.log(
+    "🚀 ~ file: index.jsx:10 ~ Home ~ userphonenumber",
+    userphonenumber
+  )
   const meetoptions = ["+76", "+73"]
   return (
     <>
@@ -128,6 +133,7 @@ export default function Home() {
                 <input
                   className="w-[100%]  md:text-[20px] md:h-[60px] md:rounded-[10px] pl-4 phonenumber--text outline-none rounded-[20px] h-[70px]"
                   type="number"
+                  onChange={(e) => setUserPhonenumber(e.target.value)}
                 />
               </div>
               <p className="paragraph--text loginscreen--text  md:text-[16px] md:pt-5 md:leading-[24px]  pt-6 w-[88%] md:w-[80%]">
